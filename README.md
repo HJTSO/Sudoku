@@ -5,7 +5,7 @@
 Q: How do we use constraint propagation to solve the naked twins problem?  
 A: The constraint propagation is a strategy that: if two boxes in a unit have only two digits value possibilities, then those digits can only be solutions for those two boxes. 
 
-<img src='images/naked-twins.png'>
+![naked-twins](images/naked-twins.png)
 
 As the picture above shows, if boxes A1 and B1 can only have 2 or 3, then it must be the case that one box has '2' and another box has '3' as a value. And there is no other boxes in the unit shared by A1 and B1 can be those values. 
 
