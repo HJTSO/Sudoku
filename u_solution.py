@@ -1,11 +1,24 @@
 assignments = []
 
+rows = 'ABCDEFGHI'
+cols = '123456789'
+
+# helper variables for keeping track of aspects of the board
+boxes        = cross(rows, cols)
+row_units    = [cross(r, cols) for r in rows]
+column_units = [cross(rows, c) for c in cols]
+square_units = [cross(rs, cs) for rs in ('ABC','DEF','GHI') for cs in ('123','456','789')]
+diag_units   = [[''.join(z) for z in zip(rows, cols)]] + [[''.join(z) for z in zip(rows, cols[::-1])]]
+unitlist     = row_units + column_units + square_units + diag_units
+units        = dict((s, [u for u in unitlist if s in u]) for s in boxes)
+peers        = dict((s, set(sum(units[s],[]))-set([s])) for s in boxes)
+
 def assign_value(values, box, value):
     """
     Please use this function to update your values dictionary!
     Assigns a value to a given box. If it updates the board record it.
     """
-
+	
     # Don't waste memory appending actions that don't actually change any values
     if values[box] == value:
         return values
