@@ -1,7 +1,20 @@
+
+#**********************************************************************
+#*                                                                    *
+#* Name: solution (Sudoku)                                            *
+#* Written: 2017-09-04 H.J.T.										  *
+#* Update:  2017-09-06         										  *
+#*                                                                    *
+#**********************************************************************
+
 assignments = []
 
 rows = 'ABCDEFGHI'
 cols = '123456789'
+
+def cross(A, B):
+    "Cross product of elements in A and elements in B."
+    return [s+t for s in A for t in B]
 
 # helper variables for keeping track of aspects of the board
 boxes        = cross(rows, cols)
@@ -51,10 +64,6 @@ def naked_twins(values):
                    for digit in twin:
                        values = assign_value(values, box, values[box].replace(digit,''))
     return values
-
-def cross(A, B):
-    "Cross product of elements in A and elements in B."
-    return [s+t for s in A for t in B]
 
 def grid_values(grid):
     """
