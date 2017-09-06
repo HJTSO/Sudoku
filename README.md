@@ -15,10 +15,13 @@ After all the naked twins in all units of the Sudoku board are found, the algori
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
 A: The strategy is including the diagonals as an additional unit in sudoku:
 
-enforcing the constraint that each of the two unit diagonals:
-[A1, B2, C3, D4, E5, F6, G7, H8, I9]
-[A9, B8, C7, D6, E5, F4, G3, H2, I1] 
-each diagonals can only have one instance of each of the digit values 1, 2, 3, 4, 5, 6, 7, 8, 9 assigned to their constituent boxes as a part of a solution. 
+enforcing the constraint that each of the two unit diagonals:  
+
+[A1, B2, C3, D4, E5, F6, G7, H8, I9]  
+
+[A9, B8, C7, D6, E5, F4, G3, H2, I1]  
+
+each diagonals can only have one instance of each of the digit values 1, 2, 3, 4, 5, 6, 7, 8, 9 assigned to their constituent boxes as a part of a solution.  
 
 All the diagonal entries will have the corresponding diagonal entries as their peers. 
 And keeping track including elimination, only_choice, and naked_twins digit elimination. 
